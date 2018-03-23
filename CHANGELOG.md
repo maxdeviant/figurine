@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+### Changed
+
+* Properties on models are now readonly to discourage and partially prevent mutation outside of `withMutations`
+
 ## [0.2.0] - 2018-03-23
 
 ### Added
