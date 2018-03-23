@@ -1,3 +1,13 @@
+#
+# Figurine
+#
+
+lib/
+
+#
+# Node
+#
+
 # Logs
 logs
 *.log

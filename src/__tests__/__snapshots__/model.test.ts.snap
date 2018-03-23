@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Model creates a model instance 1`] = `
+Object {
+  "dateOfBirth": 1963-06-09T00:00:00.000Z,
+  "name": "Johnny Depp",
+  "with": [Function],
+}
+`;
