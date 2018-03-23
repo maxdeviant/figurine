@@ -26,12 +26,17 @@ describe('Model.with', () => {
   })
 
   it('is chainable', () => {
-    const post = Model({
+    type Post = {
+      title: string
+      views: number
+    }
+
+    const post = Model<Post>({
       title: 'Hello, Sailor!',
       views: 0
     })
 
-    const incrementViews = post => {
+    const incrementViews = (post: Post) => {
       post.views++
     }
 
