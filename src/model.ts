@@ -18,7 +18,7 @@ export interface Model<T> {
    *
    * @param transform The transform to apply to the model.
    */
-  mutate(transform: Transform<T>): T & Model<T>
+  withMutations(transform: Transform<T>): T & Model<T>
 }
 
 export const Model = <T>(props: T): T & Model<T> => ({
@@ -26,7 +26,7 @@ export const Model = <T>(props: T): T & Model<T> => ({
   with(transform: Transform<T>) {
     return produce(transform)(this as any)
   },
-  mutate(transform: Transform<T>) {
+  withMutations(transform: Transform<T>) {
     transform(this as any)
     return this
   }

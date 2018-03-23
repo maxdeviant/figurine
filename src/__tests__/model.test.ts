@@ -57,7 +57,7 @@ describe('Model.mutate', () => {
       name: 'Spongebob Squarepants'
     })
 
-    const updatedUser = user.mutate(user => {
+    const updatedUser = user.withMutations(user => {
       user.name = 'Patrick Star'
     })
 
@@ -78,13 +78,13 @@ describe('Model.mutate', () => {
     })
 
     const updatedTweet = tweet
-      .mutate(tweet => {
+      .withMutations(tweet => {
         tweet.favorites++
       })
-      .mutate(tweet => {
+      .withMutations(tweet => {
         tweet.retweets += 4
       })
-      .mutate(tweet => {
+      .withMutations(tweet => {
         tweet.favorites += 1
       })
 
@@ -102,7 +102,7 @@ describe('Model.mutate', () => {
       .with(book => {
         book.title = 'War'
       })
-      .mutate(book => {
+      .withMutations(book => {
         book.title += ' and Peace'
       })
 
