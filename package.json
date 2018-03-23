@@ -1,6 +1,6 @@
 {
   "name": "figurine",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -27,13 +27,22 @@
     "ts-jest": "^22.4.2",
     "typescript": "^2.7.2"
   },
-  "files": ["lib/"],
+  "files": [
+    "lib/"
+  ],
   "jest": {
     "rootDir": "src",
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
