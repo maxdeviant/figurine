@@ -21,6 +21,7 @@ describe('Model.with', () => {
       user.name = 'Bradley Cooper'
     })
 
+    expect(user === updatedUser).toBe(false)
     expect(user.name).toBe('Brad Pitt')
     expect(updatedUser.name).toBe('Bradley Cooper')
   })
@@ -45,6 +46,7 @@ describe('Model.with', () => {
       .with(incrementViews)
       .with(incrementViews)
 
+    expect(post === updatedPost).toBe(false)
     expect(updatedPost.views).toBe(3)
   })
 })
