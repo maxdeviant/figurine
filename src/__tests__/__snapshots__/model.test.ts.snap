@@ -2,6 +2,7 @@
 
 exports[`Model creates a model instance 1`] = `
 Object {
+  "clone": [Function],
   "dateOfBirth": 1963-06-09T00:00:00.000Z,
   "name": "Johnny Depp",
   "with": [Function],

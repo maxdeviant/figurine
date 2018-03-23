@@ -111,6 +111,20 @@ describe('Model.withMutations', () => {
   })
 })
 
+describe('Model.clone', () => {
+  it('returns a clone of the model', () => {
+    const pet = Model({
+      name: 'Fido'
+    })
+
+    const clonedPet = pet.clone()
+
+    expect(pet === clonedPet).toBe(false)
+    expect(pet.name).toBe('Fido')
+    expect(clonedPet.name).toBe('Fido')
+  })
+})
+
 describe('makeModel', () => {
   it('returns a function for creating strongly-typed models', () => {
     const Superhero = makeModel<{
