@@ -51,7 +51,7 @@ describe('Model.with', () => {
   })
 })
 
-describe('Model.mutate', () => {
+describe('Model.withMutations', () => {
   it('updates the model in-place', () => {
     const user = Model({
       name: 'Spongebob Squarepants'
