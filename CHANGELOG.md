@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
-## Changed
+## Fixed
 
-* Disabled Immer's auto-freezing.
+* Disabled Immer's auto-freezing so that `Model.mutate` can be called after `Model.with`
 
 ## [0.1.0] - 2018-03-22
 
