@@ -27,6 +27,10 @@
     "ts-jest": "^22.4.2",
     "typescript": "^2.7.2"
   },
+  "files": [
+    "lib/",
+    "!lib/__tests__/"
+  ],
   "jest": {
     "rootDir": "src",
     "transform": {
