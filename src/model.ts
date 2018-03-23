@@ -1,6 +1,6 @@
 import produce, { setAutoFreeze } from 'immer'
 
-// Disable auto-freezing so that we can use `with` and `mutate` interchangeably.
+// Disable auto-freezing so that we can use `with` and `withMutations` interchangeably.
 setAutoFreeze(false)
 
 export type Transform<T> = (model: T) => void
@@ -29,7 +29,7 @@ export interface Model<T> {
 export const Model = <T>(props: T) => {
   const CLONE_TAG = '___CLONE_TAG___'
 
-  const model: T & Model<T> = {
+  const model: Readonly<T & Model<T>> = {
     ...(props as any),
     with(transform: Transform<T>) {
       return produce(transform)(this as any)
