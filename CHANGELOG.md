@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+## [0.2.0] - 2018-03-23
+
 ### Added
 
 * `Model.clone`
@@ -58,7 +60,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * `Model`
 * `makeModel`
 
-[unreleased]: https://github.com/maxdeviant/figurine/compare/v0.1.2...HEAD
+[unreleased]: https://github.com/maxdeviant/figurine/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/maxdeviant/figurine/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/maxdeviant/figurine/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/maxdeviant/figurine/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/maxdeviant/figurine/compare/v0.0.4...v0.1.0
