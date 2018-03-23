@@ -9,37 +9,37 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.1.2] - 2018-03-23
 
-## Fixed
+### Fixed
 
 * Forgot to build before the last release :persevere:
 
 ## [0.1.1] - 2018-03-23
 
-## Fixed
+### Fixed
 
 * Disabled Immer's auto-freezing so that `Model.mutate` can be called after `Model.with`
 
 ## [0.1.0] - 2018-03-22
 
-## Added
+### Added
 
 * `Model.mutate`
 
 ## [0.0.4] - 2018-03-22
 
-## Added
+### Added
 
 * Include top-level `index.d.ts`
 
 ## [0.0.3] - 2018-03-22
 
-## Changed
+### Changed
 
 * Modified files included in the package
 
 ## [0.0.2] - 2018-03-22
 
-## Added
+### Added
 
 * Include generated TypeScript declaration files
 
