@@ -1,4 +1,7 @@
-import produce from 'immer'
+import produce, { setAutoFreeze } from 'immer'
+
+// Disable auto-freezing so that we can use `with` and `mutate` interchangeably.
+setAutoFreeze(false)
 
 export type Transform<T> = (model: T) => void
 

@@ -92,6 +92,23 @@ describe('Model.mutate', () => {
     expect(tweet.retweets).toBe(4)
     expect(tweet.favorites).toBe(2)
   })
+
+  it('is usable on an immutable copy', () => {
+    const book = Model({
+      title: 'Pride and Prejudice'
+    })
+
+    const updatedBook = book
+      .with(book => {
+        book.title = 'War'
+      })
+      .mutate(book => {
+        book.title += ' and Peace'
+      })
+
+    expect(book.title).toBe('Pride and Prejudice')
+    expect(updatedBook.title).toBe('War and Peace')
+  })
 })
 
 describe('makeModel', () => {
