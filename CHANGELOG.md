@@ -7,7 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
-## Changed
+### Added
+
+* `Model.clone`
+
+### Changed
 
 * Renamed `Model.mutate` to `Model.withMutations`
 
