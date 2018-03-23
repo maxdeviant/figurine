@@ -10,3 +10,5 @@ export const Model = <T>(props: T): T & Model<T> => ({
     return produce(transform)(this as any)
   }
 })
+
+export const makeModel = <T>() => (props: T) => Model(props)

@@ -1,4 +1,4 @@
-import { Model } from '../model'
+import { Model, makeModel } from '../model'
 
 describe('Model', () => {
   it('creates a model instance', () => {
@@ -46,5 +46,24 @@ describe('Model.with', () => {
       .with(incrementViews)
 
     expect(updatedPost.views).toBe(3)
+  })
+})
+
+describe('makeModel', () => {
+  it('returns a function for creating strongly-typed models', () => {
+    const Superhero = makeModel<{
+      name: string
+    }>()
+
+    const batman = Superhero({
+      name: 'Batman'
+    })
+
+    const superman = Superhero({
+      name: 'Superman'
+    })
+
+    expect(batman.name).toBe('Batman')
+    expect(superman.name).toBe('Superman')
   })
 })
