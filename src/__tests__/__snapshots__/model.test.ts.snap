@@ -3,6 +3,7 @@
 exports[`Model creates a model instance 1`] = `
 Object {
   "dateOfBirth": 1963-06-09T00:00:00.000Z,
+  "mutate": [Function],
   "name": "Johnny Depp",
   "with": [Function],
 }
