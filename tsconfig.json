@@ -5,6 +5,7 @@
     "strict": true,
     "esModuleInterop": true,
     "outDir": "lib",
-    "rootDir": "src"
+    "rootDir": "src",
+    "declaration": true
   }
 }

@@ -1,6 +1,6 @@
 import produce from 'immer'
 
-interface Model<T> {
+export interface Model<T> {
   with: (fn: (x: T) => void) => T & Model<T>
 }
 
