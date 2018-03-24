@@ -9,7 +9,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "figurine": "^0.2.0",
+    "figurine": "^0.2.1",
     "mobx": "^4.1.0",
     "mobx-react": "^5.0.0",
     "react": "^16.2.0",
