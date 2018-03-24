@@ -31,6 +31,7 @@
   },
   "files": [
     "lib/",
+    "!lib/__tests__/",
     "index.d.ts"
   ],
   "jest": {
