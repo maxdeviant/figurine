@@ -28,9 +28,13 @@ describe('Lens.with', () => {
       person.fullName = 'Jerry Michigan'
     })
 
+    expect(updatedPerson.fullName).toBe('Jerry Michigan')
+
     expect(person.firstName).toBe('Tony')
     expect(person.lastName).toBe('Montana')
-    expect(updatedPerson.fullName).toBe('Jerry Michigan')
+
+    expect(updatedPerson.removeLens().firstName).toBe('Jerry')
+    expect(updatedPerson.removeLens().lastName).toBe('Michigan')
   })
 })
 
