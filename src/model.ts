@@ -32,7 +32,7 @@ export interface Model<T> {
    *
    * @param lens The lens through which to view the model.
    */
-  throughLens<TLens>(lens: Lens<T, TLens>): TLens & Lensed<TLens, T>
+  throughLens<TLens>(lens: Lens<T, TLens>): TLens & Lensed<TLens, T & Model<T>>
 }
 
 export type ModelInstance<T> = Readonly<T & Model<T>>
