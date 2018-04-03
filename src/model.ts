@@ -27,7 +27,9 @@ export interface Model<T> {
   clone(): T & Model<T>
 }
 
-export const Model = <T>(props: T): Readonly<T & Model<T>> => ({
+export type ModelInstance<T> = Readonly<T & Model<T>>
+
+export const Model = <T>(props: T): ModelInstance<T> => ({
   ...(props as any),
   with(transform: Transform<T>) {
     return produce(transform)(this as any)
