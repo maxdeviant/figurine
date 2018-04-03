@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+### Added
+
+* Added support for lensing
+  * `makeLens` will create a lens to view a model through
+  * `Lens.with` will immutably update the underlying model
+  * `Lens.withMutations` will update the underlying model in-place
+  * `Lens.removeLens` will remove the lens, returning the backing model. For use with `Lens.with`
+
 ## [0.2.1] - 2018-03-23
 
 ### Changed
