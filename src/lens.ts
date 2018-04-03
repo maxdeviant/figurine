@@ -15,9 +15,10 @@ export const makeLens = <TModel, TLens>(
 ): Lens<TModel, TLens> => (model: ModelInstance<TModel>) => ({
   ...(lens(model as any) as any),
   with(transform: Transform<TLens>) {
-    return lens(produce(draft => {
-      transform(lens(draft as any))
-    }, model) as any)
+    const updatedModel = produce(draft => {
+      transform(lens(draft))
+    })(model)
+    return lens(updatedModel)
   },
   withMutations(transform: Transform<TLens>) {
     transform(lens(model as any))
