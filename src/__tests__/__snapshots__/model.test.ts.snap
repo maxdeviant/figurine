@@ -5,6 +5,7 @@ Object {
   "clone": [Function],
   "dateOfBirth": 1963-06-09T00:00:00.000Z,
   "name": "Johnny Depp",
+  "throughLens": [Function],
   "with": [Function],
   "withMutations": [Function],
 }

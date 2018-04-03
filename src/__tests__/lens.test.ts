@@ -28,13 +28,15 @@ describe('Lens.withMutations', () => {
     }))
 
     expect(identifier.camelCase).toBe('customerCount')
-    expect(pascalCaseLens(identifier).pascalCase).toBe('CustomerCount')
-
-    const updatedIdentifier = pascalCaseLens(identifier).withMutations(
-      identifier => {
-        identifier.pascalCase = 'ActiveCustomerCount'
-      }
+    expect(identifier.throughLens(pascalCaseLens).pascalCase).toBe(
+      'CustomerCount'
     )
+
+    const updatedIdentifier = identifier
+      .throughLens(pascalCaseLens)
+      .withMutations(identifier => {
+        identifier.pascalCase = 'ActiveCustomerCount'
+      })
 
     expect(updatedIdentifier.pascalCase).toBe('ActiveCustomerCount')
     expect(identifier.camelCase).toBe('activeCustomerCount')

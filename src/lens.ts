@@ -6,20 +6,20 @@ export interface Lensed<T> {
   withMutations(transform: Transform<T>): T & Lensed<T>
 }
 
-export type Lens<TModel, TLense> = (
+export type Lens<TModel, TLens> = (
   model: ModelInstance<TModel>
-) => TLense & Lensed<TModel>
+) => TLens & Lensed<TModel>
 
-export const makeLens = <TModel, TLense>(lens: (model: TModel) => TLense) => (
-  model: ModelInstance<TModel>
-): TLense & Lensed<TLense> => ({
+export const makeLens = <TModel, TLens>(
+  lens: (model: TModel) => TLens
+): Lens<TModel, TLens> => (model: ModelInstance<TModel>) => ({
   ...(lens(model as any) as any),
-  with(transform: Transform<TLense>) {
+  with(transform: Transform<TLens>) {
     return lens(produce(draft => {
       transform(lens(draft as any))
     }, model) as any)
   },
-  withMutations(transform: Transform<TLense>) {
+  withMutations(transform: Transform<TLens>) {
     transform(lens(model as any))
     return lens(model as any)
   }

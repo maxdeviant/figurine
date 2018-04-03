@@ -1,5 +1,6 @@
 import produce, { setAutoFreeze } from 'immer'
 import cloneDeep from 'lodash.clonedeep'
+import { Lens, Lensed } from './lens'
 
 // Disable auto-freezing so that we can use `with` and `withMutations` interchangeably.
 setAutoFreeze(false)
@@ -25,6 +26,13 @@ export interface Model<T> {
    * Returns a clone of the model.
    */
   clone(): T & Model<T>
+
+  /**
+   * Views the model through the given lens.
+   *
+   * @param lens The lens through which to view the model.
+   */
+  throughLens<TLens>(lens: Lens<T, TLens>): TLens & Lensed<TLens>
 }
 
 export type ModelInstance<T> = Readonly<T & Model<T>>
@@ -40,6 +48,9 @@ export const Model = <T>(props: T): ModelInstance<T> => ({
   },
   clone() {
     return cloneDeep(this)
+  },
+  throughLens<TLens>(lens: Lens<T, TLens>) {
+    return lens(this)
   }
 })
 
