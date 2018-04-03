@@ -6,9 +6,7 @@ export interface Lensed<T> {
   withMutations(transform: Transform<T>): T & Lensed<T>
 }
 
-export type Lens<TModel, TLens> = (
-  model: ModelInstance<TModel>
-) => TLens & Lensed<TModel>
+export type Lens<TModel, TLens> = (model: ModelInstance<TModel>) => TLens
 
 export const makeLens = <TModel, TLens>(
   lens: (model: TModel) => TLens
