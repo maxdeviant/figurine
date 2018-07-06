@@ -45,4 +45,31 @@ describe('Discriminated Unions', () => {
       expect(updatedVehicle.name).toBe('Yachty McYachtface')
     }
   })
+
+  it('correctly narrows the type of an array', () => {
+    const hondaCivic = makeVehicle({
+      tag: 'Car',
+      make: 'Honda',
+      model: 'Civic'
+    })
+    const fordExplorer = makeVehicle({
+      tag: 'Car',
+      make: 'Ford',
+      model: 'Explorer'
+    })
+
+    const vehicles: Vehicle[] = [
+      makeVehicle({
+        tag: 'Plane'
+      }),
+      hondaCivic,
+      fordExplorer
+    ]
+
+    const isCar = (vehicle: Vehicle): vehicle is Car => vehicle.tag === 'Car'
+
+    const cars = vehicles.filter(isCar)
+
+    expect(cars).toEqual([hondaCivic, fordExplorer])
+  })
 })
