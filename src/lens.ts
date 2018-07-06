@@ -1,5 +1,5 @@
 import produce from 'immer'
-import { Model, ModelInstance, Transform } from './model'
+import { ModelInstance, Transform } from './model'
 
 export interface Lensed<TLens, TModel> {
   /**
