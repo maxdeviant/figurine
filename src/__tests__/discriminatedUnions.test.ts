@@ -23,13 +23,13 @@ export interface Plane extends ModelInstance<PlaneTraits> {}
 
 export type VehicleTraits = CarTraits | BoatTraits | PlaneTraits
 
-export type Vehicle = Car | Boat | Plane
+export type Vehicle = ModelInstance<VehicleTraits>
 
 export const makeVehicle = makeModel<VehicleTraits>()
 
 describe('Discriminated Unions', () => {
   it('correctly infers the type of `with` for discriminated unions', () => {
-    const vehicle = makeVehicle({
+    const vehicle: Vehicle = makeVehicle({
       tag: 'Boat',
       name: 'Boaty McBoatface'
     })
