@@ -10,13 +10,6 @@ export interface Lensed<TLens, TModel> {
   with(transform: Transform<TLens>): TLens & Lensed<TLens, TModel>
 
   /**
-   * Runs the given transform and mutates the source model in-place.
-   *
-   * @param transform The transform to apply to the source model.
-   */
-  withMutations(transform: Transform<TLens>): TLens & Lensed<TLens, TModel>
-
-  /**
    * Removes the lens and returns the source model.
    */
   removeLens(): TModel
@@ -35,10 +28,6 @@ export const makeLens = <TModel, TLens>(
       transform(lens(draft))
     })(model)
     return makeLens(lens)(updatedModel)
-  },
-  withMutations(transform: Transform<TLens>) {
-    transform(lens(model as any))
-    return makeLens(lens)(model as any)
   },
   removeLens() {
     return model
