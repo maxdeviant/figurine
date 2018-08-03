@@ -24,7 +24,7 @@ export type ModelInstance<T> = Readonly<T & Model<T>>
 export const Model = <T>(props: T): ModelInstance<T> => ({
   ...(props as any),
   with(transform: Transform<T>) {
-    return produce(transform)(this as any)
+    return produce(transform as any)(this as any)
   },
   throughLens<TLens>(lens: Lens<T, TLens>) {
     return lens(this)
