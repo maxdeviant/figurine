@@ -142,4 +142,21 @@ describe('makeModel', () => {
     expect(batman.name).toBe('Batman')
     expect(superman.name).toBe('Superman')
   })
+
+  it('uses the default values for the models', () => {
+    const Animal = makeModel<{
+      name: string
+      age?: number | '???'
+    }>({
+      name: '',
+      age: '???'
+    })
+
+    const rover = Animal({
+      name: 'Rover'
+    })
+
+    expect(rover.name).toBe('Rover')
+    expect(rover.age).toBe('???')
+  })
 })

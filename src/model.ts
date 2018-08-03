@@ -54,4 +54,9 @@ export const Model = <T>(props: T): ModelInstance<T> => ({
   }
 })
 
-export const makeModel = <T>() => (props: T) => Model(props)
+export const makeModel = <T>(defaultProps?: T) => (
+  props: T
+): ModelInstance<T> =>
+  defaultProps
+    ? (Model({ ...(defaultProps as any), ...(props as any) }) as any)
+    : Model(props)
